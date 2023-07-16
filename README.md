@@ -1,1 +1,1 @@
-Passkey Manager is an open source password manager application which allows you to storage your passwords cross platform.
+Passkey Manager is an open source password manager application which allows you to store your passwords cross platform.
