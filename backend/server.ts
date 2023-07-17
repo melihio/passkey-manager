@@ -1,13 +1,14 @@
 import express from 'express'
+import dotenv from 'dotenv'
+dotenv.config()
+import { log } from './utils/logger'
 
 const v1 = express.Router()
 const app = express()
-// const port = process.env.PORT
+const port = process.env.PORT
 
-
-// v1.post("/login", Login)
-// v1.get("/get-charts", Login)
+v1.post("/login", () => { })
 
 app.use(express.json())
 app.use("/api/v1", v1)
-// app.listen(port, () => utils.log.info(`Server running on port : ${port}`))
+app.listen(port, () => log.info(`Server running on port : ${port}`))
