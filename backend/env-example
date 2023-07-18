@@ -1,0 +1,5 @@
+DB_NAME=$db_name
+DB_HOST=$db_ip
+DB_USERNAME=$db_username
+DB_PASS=$db_password
+PORT=$app_port
