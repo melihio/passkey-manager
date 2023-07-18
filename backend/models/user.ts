@@ -1,7 +1,7 @@
 import { DataTypes, Model } from 'sequelize';
 import { sequelize } from '../db/db';
 
-class User extends Model {
+export class User extends Model {
     declare firstName: string;
     declare lastName: string;
     declare email: string;
@@ -9,7 +9,7 @@ class User extends Model {
     declare password: string;
     declare createdAt: string;
     declare updatedAt: string;
-    declare deletedAt: string;
+    // declare deletedAt: string;
 }
 
 User.init({
@@ -45,5 +45,5 @@ User.init({
         defaultValue: DataTypes.NOW
     },
     updatedAt: DataTypes.DATE,
-    deletedAt: DataTypes.DATE,
+    // deletedAt: DataTypes.DATE,
 }, { sequelize })

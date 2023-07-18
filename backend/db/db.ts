@@ -11,6 +11,7 @@ export const sequelize = new Sequelize(process.env.DB_NAME!, process.env.DB_USER
 
 try {
     sequelize.authenticate();
+    sequelize.sync()
     log.info('Connection has been established successfully.');
 } catch (error) {
     log.error('Unable to connect to the database:', error);
