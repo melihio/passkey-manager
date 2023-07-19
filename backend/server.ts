@@ -10,6 +10,7 @@ const port = process.env.PORT
 
 v1.post("/register", Register)
 v1.post("/login", Login)
+v1.post("save-credential")
 
 app.use(express.json())
 app.use("/api/v1", v1)  
