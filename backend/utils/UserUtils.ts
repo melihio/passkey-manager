@@ -1,4 +1,4 @@
-import { User } from "../models/user";
+import { User } from "../models/User";
 
 export async function DoesEmailExists(email: string): Promise<boolean> {
     const result = await User.findAndCountAll({ where: { email: email, } })

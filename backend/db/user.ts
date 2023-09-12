@@ -1,4 +1,4 @@
-import { User } from "../models/user";
+import { User } from "../models/User";
 import bcrypt from "bcryptjs";
 import { DoesEmailExists, DoesUsernameExists } from "../utils/UserUtils";
 import { ReturnType } from "../models/ReturnType";
@@ -14,17 +14,17 @@ export async function RegisterDB(user: User): Promise<ReturnType> {
     })
 }
 
-export async function LoginDB(username: string, password: string):Promise<ReturnType> {
+export async function LoginDB(username: string, password: string): Promise<ReturnType> {
     return new Promise(async (resolve, reject) => {
         try {
             const result = await User.findAll({ where: { username: username } })
             if (!result.length)
-                throw "User not found"
+                throw new ReturnType(false, "User not found", null)
             const user = result[0]
             if (await bcrypt.compare(password, user.password))
-                resolve(new ReturnType(true,"Login Success","session"))
+                resolve(new ReturnType(true, "Login Success", "session"))
             else
-                reject(new ReturnType(false,"Passwords Does not match",null))
+                reject(new ReturnType(false, "Wrong password or username", null))
         } catch (err) {
             reject(err)
         }

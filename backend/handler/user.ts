@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { isNullOrEmpty } from "../utils/isNullOrEmpty";
 import { LoginDB, RegisterDB } from "../db/user";
-import { User } from "../models/user";
+import { User } from "../models/User";
 import { ReturnType } from "../models/ReturnType";
 import { EncryptPassword } from "../utils/encryptPassword";
 

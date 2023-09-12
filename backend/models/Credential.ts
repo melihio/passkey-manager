@@ -1,32 +1,25 @@
 import { DataTypes, Model } from 'sequelize';
 import { sequelize } from '../db/db';
 
-export class User extends Model {
-    declare firstName: string;
-    declare lastName: string;
-    declare email: string;
+export class Credential extends Model {
+    declare owner_id: number;
+    declare website: string;
     declare username: string;
     declare password: string;
-    declare createdAt: string;
-    declare updatedAt: string;
 }
 
-User.init({
+Credential.init({
     id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
         autoIncrement: true,
     },
-    firstName: {
-        type: DataTypes.STRING,
+    owner_id: {
+        type: DataTypes.INTEGER,
         allowNull: false
     },
-    lastName: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
-    email: {
+    website: {
         type: DataTypes.STRING,
         allowNull: false
     },
@@ -38,11 +31,4 @@ User.init({
         type: DataTypes.STRING,
         allowNull: false
     },
-    createdAt: {
-        type: DataTypes.DATE,
-        allowNull: false,
-        defaultValue: DataTypes.NOW
-    },
-    updatedAt: DataTypes.DATE,
-    // deletedAt: DataTypes.DATE,
 }, { sequelize })
